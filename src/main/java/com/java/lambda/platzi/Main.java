@@ -1,5 +1,9 @@
 package com.java.lambda.platzi;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -23,6 +27,18 @@ public class Main {
 		
 		oneListener.onOne("Sin lambda :(");
 		oneListener2.onOne("Con lamda :)");
+		
+		OnOneListener oneListener3 = message -> System.out.println("Tu mensaje " + message);
+		oneListener3.onOne("mas ccorta");
+		
+		//Operador ::
+		List<String> lista = new ArrayList<>();
+		lista.add("uno");
+		lista.add("dos");
+		lista.forEach(System.out::println);
+		
+		List<String> words = Arrays.asList("hello",null,"");
+		words.stream().filter(t -> t != null).filter(t -> !t.isEmpty()).forEach(System.out::println);
 
 	}
 
